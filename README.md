@@ -30,3 +30,5 @@ bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/ma
 I currently have no future plans, but if I come across any plugins I like, I may add them to the script. 
 
 Another idea is to allow the user to input which plugins to add automatically, but at the moment these are my favourite which end up on every Oh My Zsh terminal I use.
+
+#### *"Never spend 6 minutes doing something by hand when you can spend 6 hours failing to automate it."* - [Zhuowei Zhang](https://twitter.com/zhuowei/status/1254266079532154880?lang=en-GB)
