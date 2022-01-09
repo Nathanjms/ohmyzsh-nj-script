@@ -4,11 +4,10 @@
 # Note: Please ensure you already have zsh installed when running this script.
 # Run the scrip with `bash ./zsh-setup.sh`
 
-
 echo "Creating temporary directory..."
 echo
-mkdir ./zsh-setup
-cd ./zsh-setup
+mkdir ./ohmyzsh-nj-setup
+cd ./ohmyzsh-nj-setup
 
 #Check if git is installed
 if ! command -v git &> /dev/null
@@ -18,7 +17,7 @@ then
 fi
 
 # Get and Run the ohmyzsh install.sh (passing variable to make it not launch when ran)
-echo "installing oh-my-zsh..."
+echo "Installing oh-my-zsh..."
 echo
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 RUNZSH='no' sh install.sh

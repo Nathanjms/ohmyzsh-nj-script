@@ -1,24 +1,24 @@
-# `oh-my-zsh` script
+# `oh-my-zsh` Custom Script
 
 ## What is this?
 
-A script file to install (oh-my-zsh)[https://ohmyz.sh/], and then install:
-- (powerlevel10k)[https://github.com/romkatv/powerlevel10k]
-- (zsh-autosuggestions)[https://github.com/zsh-users/zsh-autosuggestions]
-- (zsh-syntax-highlighting)[https://github.com/zsh-users/zsh-syntax-highlighting]
+A script file to install [oh-my-zsh](https://ohmyz.sh/), and then install:
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 automatically.
 
 I made this to speed up this process when instaling a different Linux Distribution.
 
 ## How to run
 
-You can download the script file and run it with 
+You can download the script file and run it with:
 ```
-bash .zsh-setup.sh
+bash .ohmyzsh-nj-setup.sh
 ```
-Or get it from github directly with
+Or get it from GitHub directly with:
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/oh-my-zsh-script/main/zsh-setup.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/oh-my-zsh-script/main/ohmyzsh-nj-setup.sh)
 ```
 
 ## Future Plans
