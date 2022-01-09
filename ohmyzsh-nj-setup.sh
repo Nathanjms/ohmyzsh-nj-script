@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # An installer of oh-my-zsh with powerlevel10k, zsh-auto-suggestions, and zsh-syntax-highlighting automatically installed.
-# Note: Please ensure you already have zsh installed when running this script.
-# Run the scrip with `bash ./zsh-setup.sh`
+# Note: This script assumes you already have zsh installed when running this script.
+# Run the script with `bash ./zsh-setup.sh`
 
 echo "Creating temporary directory..."
 echo
