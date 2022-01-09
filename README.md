@@ -18,7 +18,7 @@ bash .ohmyzsh-nj-setup.sh
 ```
 Or get it from GitHub directly with:
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/oh-my-zsh-script/main/ohmyzsh-nj-setup.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/main/ohmyzsh-nj-setup.sh)
 ```
 
 ## Future Plans
