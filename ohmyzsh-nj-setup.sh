@@ -106,8 +106,8 @@ echo "Installing fonts..."
 echo
 
 # Check for dir, if not found create it using the mkdir
-[ ! -d "$fontsdir" ] && mkdir -p "$fontsdir"
-mv -t $fontsdir MesloLGS%20NF%20Regular.ttf MesloLGS%20NF%20Italic.ttf MesloLGS%20NF%20Bold.ttf MesloLGS%20NF%20Bold%20Italic.ttf
+[ ! -d "$fontsDir" ] && mkdir -p "$fontsDir"
+mv -t $fontsDir MesloLGS%20NF%20Regular.ttf MesloLGS%20NF%20Italic.ttf MesloLGS%20NF%20Bold.ttf MesloLGS%20NF%20Bold%20Italic.ttf
 
 # Get powerlevel10k from github and put into folder
 echo "Getting powerlevel10k theme from github..." 
