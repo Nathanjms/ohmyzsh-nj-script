@@ -78,7 +78,7 @@ function doubleConfirmOs {
 }
 
 # Determine fonts directory by checking if using Mac or Linux.
-read -p "Are you installing on Mac or Linux? [$(tput bold)(L)inux$(tput sgr0)|(M)ac]: " macOrLinux
+read -p "Are you installing on Mac or Linux? [$(tput bold)(l)inux$(tput sgr0)|(m)ac]: " macOrLinux
 echo
 checkMacOrLinux $macOrLinux
 
@@ -107,7 +107,7 @@ echo
 
 # Check for dir, if not found create it using the mkdir
 [ ! -d "$fontsDir" ] && mkdir -p "$fontsDir"
-mv -t $fontsDir MesloLGS%20NF%20Regular.ttf MesloLGS%20NF%20Italic.ttf MesloLGS%20NF%20Bold.ttf MesloLGS%20NF%20Bold%20Italic.ttf
+mv MesloLGS%20NF%20Regular.ttf MesloLGS%20NF%20Italic.ttf MesloLGS%20NF%20Bold.ttf MesloLGS%20NF%20Bold%20Italic.ttf $fontsDir
 
 # Get powerlevel10k from github and put into folder
 echo "Getting powerlevel10k theme from github..." 
