@@ -19,7 +19,7 @@ fi
 # Get and Run the ohmyzsh install.sh (passing variable to make it not launch when ran)
 echo "Installing oh-my-zsh..."
 echo
-wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 RUNZSH='no' sh install.sh
 
 # Getting recommended fonts
