@@ -1,13 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # An installer of oh-my-zsh with powerlevel10k, zsh-auto-suggestions, and zsh-syntax-highlighting automatically installed.
 # Note: This script assumes you already have zsh installed when running this script.
 # Run the script with `bash ./zsh-setup.sh`
-
-echo "Creating temporary directory..."
-echo
-mkdir ./ohmyzsh-nj-setup
-cd ./ohmyzsh-nj-setup
 
 #Check if git is installed
 if ! command -v git &> /dev/null
@@ -15,6 +10,85 @@ then
     echo "git not found, please install it."
     exit 1
 fi
+
+function checkMacOrLinux {
+    if [[ -z "$1" ]] \
+    || [[ "$1" = "Linux" ]] \
+    || [[ "$1" = "linux" ]] \
+    || [[ "$1" = "l" ]] \
+    || [[ "$1" = "L" ]]  \
+    ;
+    then
+        doubleConfirmOs "linux"
+        echo -n "Linux Chosen. "
+        fontsDir=~/.local/share/fonts/meslo
+    elif [[ "$1" = "Mac" ]] \
+        || [[ "$1" = "mac" ]] \
+        || [[ "$1" = "m" ]] \
+        || [[ "$1" = "M" ]] \
+    ;
+    then
+        macWarningMessage
+        doubleConfirmOs "mac"
+        echo -n "Mac Chosen. "
+        fontsDir=~/Library/Fonts/meslo
+    else
+        echo "Invalid choice. Exiting."
+        exit 1
+    fi
+}
+
+function macWarningMessage {
+    macMsg="Note: I have not fully tested the Mac version of this script, and will do so once I need to"
+    macMsg="$macMsg reinstall oh-my-zsh onto a Mac. Do you wish to continue (and test this for me!?) [$(tput bold)Y$(tput sgr0)|n]: "
+    read -p "$macMsg" macContinueWarning
+    if [[ -z "$macContinueWarning" ]] \
+    || [[ "$macContinueWarning" = "Y" ]] \
+    || [[ "$macContinueWarning" = "y" ]] \
+    ;
+    then
+        echo
+        echo "Good Luck!"
+        echo
+    else
+        echo
+        echo "Exiting... Feel free to come back once it's been tested!"
+        exit 1
+    fi
+}
+
+function doubleConfirmOs {
+    unameOut="$(uname -s)"
+    if [[ ( "$unameOut" == "Darwin" && "$1" == "linux" ) || ( "$unameOut" == "Linux" && "$1" == "mac" ) ]]; then
+        read -p "Alert: Detected different OS compared to choice. Continue? [$(tput bold)Y$(tput sgr0)|n]: " doubleconfirmContinue      
+        if [[ -z "$doubleconfirmContinue" ]] \
+        || [[ "$macContinueWarning" = "Y" ]] \
+        || [[ "$macContinueWarning" = "y" ]] \
+        ;
+        then
+            echo
+            echo "Continuing..."
+            echo
+        else
+            echo
+            echo "Exiting..."
+            exit 1
+        fi
+    fi
+}
+
+# Determine fonts directory by checking if using Mac or Linux.
+read -p "Are you installing on Mac or Linux? [$(tput bold)(L)inux$(tput sgr0)|(M)ac]: " macOrLinux
+echo
+checkMacOrLinux $macOrLinux
+
+echo "Setting fonts directory to ${fontsDir}..."
+echo
+
+echo "Creating temporary directory for script..."
+echo
+mkdir ./ohmyzsh-nj-setup
+cd ./ohmyzsh-nj-setup
 
 # Get and Run the ohmyzsh install.sh (passing variable to make it not launch when ran)
 echo "Installing oh-my-zsh..."
@@ -30,7 +104,6 @@ curl --remote-name-all https://github.com/romkatv/powerlevel10k-media/raw/master
 # Installing fonts (by moving them into fonts directory)
 echo "Installing fonts..."
 echo
-fontsdir=~/.local/share/fonts/meslo
 
 # Check for dir, if not found create it using the mkdir
 [ ! -d "$fontsdir" ] && mkdir -p "$fontsdir"
@@ -64,7 +137,7 @@ echo
 sed -i "s/plugins=(git)/plugins=(git ${additionalPlugins})/" ~/.zshrc
 
 # Clean up
-echo "Removing temporary directory and all files..."
+echo "Cleaning up..."
 echo
 cd .. && rm -rf ./zsh-setup 
 
