@@ -11,13 +11,13 @@ I made this to speed up this process when installing a different Linux Distribut
 
 ## How to run
 
-You can download the script file and run it with:
-```shell
-bash .ohmyzsh-nj-setup.sh
-```
-Or get it from GitHub directly with:
+You can download and run it directly from GitHub with:
 ```shell
 bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/main/ohmyzsh-nj-setup.sh)
+```
+Or you can download the script file and run it with:
+```shell
+bash ./ohmyzsh-nj-setup.sh
 ```
 
 ## Compatibility
