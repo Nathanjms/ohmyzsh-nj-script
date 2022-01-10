@@ -18,12 +18,14 @@ bash .ohmyzsh-nj-setup.sh
 Or get it from GitHub directly with:
 ```shell
 bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/main/ohmyzsh-nj-setup.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/add-mac-support/ohmyzsh-nj-setup.sh)
 ```
 
-## Compatability
+## Compatibility
 
 - This script work on any Linux distro, but the font directory may need updating if (for whatever reason) that distro does not store user fonts in `~/.local/share/fonts`
-- `git` is required for this to work. 
+- This script should also work on Mac (Untested currently)
+- `git` is required for this to work (and `curl`, but this is a dependency of `git`).
 
 ## Future Plans
 

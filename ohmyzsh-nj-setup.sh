@@ -40,7 +40,7 @@ function checkMacOrLinux {
 
 function macWarningMessage {
     macMsg="Note: I have not fully tested the Mac version of this script, and will do so once I need to"
-    macMsg="$macMsg reinstall oh-my-zsh onto a Mac. Do you wish to continue (and test this for me!?) [$(tput bold)Y$(tput sgr0)|n]: "
+    macMsg="$macMsg reinstall Oh My Zsh onto a Mac. Do you wish to continue (and test this for me!?) [$(tput bold)Y$(tput sgr0)|n]: "
     read -p "$macMsg" macContinueWarning
     if [[ -z "$macContinueWarning" ]] \
     || [[ "$macContinueWarning" = "Y" ]] \
