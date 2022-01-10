@@ -7,7 +7,7 @@ A script file to install [Oh My Zsh](https://ohmyz.sh/) as usual, but then to al
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-I made this to speed up this process when instaling a different Linux Distribution. The plugins and the theme are added automatically to the `~/.zshrc`, and the theme's [recommended font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) (MesloLGS) is installed for the user.
+I made this to speed up this process when installing a different Linux Distribution. The plugins and the theme are added automatically to the `~/.zshrc`, and the theme's [recommended font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) (MesloLGS) is installed for the user.
 
 ## How to run
 
@@ -20,10 +20,11 @@ Or get it from GitHub directly with:
 bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/main/ohmyzsh-nj-setup.sh)
 ```
 
-## Compatability
+## Compatibility
 
 - This script work on any Linux distro, but the font directory may need updating if (for whatever reason) that distro does not store user fonts in `~/.local/share/fonts`
-- `git` is required for this to work. 
+- This script should also work on Mac (Untested currently)
+- `git` is required for this to work (and `curl`, but this is a dependency of `git`).
 
 ## Future Plans
 
