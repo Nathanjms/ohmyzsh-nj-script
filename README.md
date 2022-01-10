@@ -18,7 +18,6 @@ bash .ohmyzsh-nj-setup.sh
 Or get it from GitHub directly with:
 ```shell
 bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/main/ohmyzsh-nj-setup.sh)
-bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/add-mac-support/ohmyzsh-nj-setup.sh)
 ```
 
 ## Compatibility
