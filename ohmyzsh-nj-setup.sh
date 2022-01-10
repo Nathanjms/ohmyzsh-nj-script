@@ -123,7 +123,7 @@ sed -i.bk-tmp "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k\/powerleve
 echo "Getting zsh-auto-suggestions..."
 echo
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-additionalPlugins='zsh-auto-suggestions'
+additionalPlugins='zsh-autosuggestions'
 
 # Get zsh-syntax-highlighting
 echo "Getting zsh-syntax-highlighting..."
