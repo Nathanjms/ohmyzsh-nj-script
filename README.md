@@ -11,7 +11,7 @@ I made this to speed up this process when installing a different Linux Distribut
 
 ## How to run
 
-You can download and run it directly from GitHub with:
+You can download and run the script file directly from GitHub with:
 ```shell
 bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/main/ohmyzsh-nj-setup.sh)
 ```
