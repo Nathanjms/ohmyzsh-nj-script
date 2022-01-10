@@ -13,7 +13,7 @@ I made this to speed up this process when installing a different Linux Distribut
 
 You can download and run the script file directly from GitHub with:
 ```shell
-bash <(curl -Ls https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/main/ohmyzsh-nj-setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/Nathanjms/ohmyzsh-nj-script/main/ohmyzsh-nj-setup.sh)
 ```
 Or you can download the script file and run it with:
 ```shell
