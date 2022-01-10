@@ -21,7 +21,7 @@ function checkMacOrLinux {
     then
         doubleConfirmOs "linux"
         echo -n "Linux Chosen. "
-        fontsDir=~/.local/share/fonts/meslo
+        fontsDir=~/.local/share/fonts/meslo # Set $fontsDir variable based on the OS
     elif [[ "$1" = "Mac" ]] \
         || [[ "$1" = "mac" ]] \
         || [[ "$1" = "m" ]] \
@@ -31,7 +31,7 @@ function checkMacOrLinux {
         macWarningMessage
         doubleConfirmOs "mac"
         echo -n "Mac Chosen. "
-        fontsDir=~/Library/Fonts/meslo
+        fontsDir=~/Library/Fonts/meslo # Set $fontsDir variable based on the OS
     else
         echo "Invalid choice. Exiting."
         exit 1
@@ -78,7 +78,7 @@ function doubleConfirmOs {
 }
 
 # Determine fonts directory by checking if using Mac or Linux.
-read -p "Are you installing on Mac or Linux? [$(tput bold)(L)inux$(tput sgr0)|(M)ac]: " macOrLinux
+read -p "Are you installing on Mac or Linux? [$(tput bold)(l)inux$(tput sgr0)|(m)ac]: " macOrLinux
 echo
 checkMacOrLinux $macOrLinux
 
@@ -107,7 +107,7 @@ echo
 
 # Check for dir, if not found create it using the mkdir
 [ ! -d "$fontsDir" ] && mkdir -p "$fontsDir"
-mv -t $fontsDir MesloLGS%20NF%20Regular.ttf MesloLGS%20NF%20Italic.ttf MesloLGS%20NF%20Bold.ttf MesloLGS%20NF%20Bold%20Italic.ttf
+mv MesloLGS%20NF%20Regular.ttf MesloLGS%20NF%20Italic.ttf MesloLGS%20NF%20Bold.ttf MesloLGS%20NF%20Bold%20Italic.ttf $fontsDir
 
 # Get powerlevel10k from github and put into folder
 echo "Getting powerlevel10k theme from github..." 
@@ -117,7 +117,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 # Applying powerlevel10k theme to .zshrc by changing the default (ZSH_THEME="robbyrussell")
 echo "Applying p10k theme to .zshrc..."
 echo
-sed -i "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/" ~/.zshrc
+sed -i.bk-tmp "s/ZSH_THEME=\"robbyrussell\"/ZSH_THEME=\"powerlevel10k\/powerlevel10k\"/" ~/.zshrc # Add backup file for Mac compatability, will be removed in cleanup
 
 # Get zsh-auto-suggestions
 echo "Getting zsh-auto-suggestions..."
@@ -134,12 +134,12 @@ additionalPlugins="${additionalPlugins} zsh-syntax-highlighting"
 # Find plugins section and update
 echo "Adding plugins to ~/.zshrc"
 echo
-sed -i "s/plugins=(git)/plugins=(git ${additionalPlugins})/" ~/.zshrc
+sed -i.bk-tmp "s/plugins=(git)/plugins=(git ${additionalPlugins})/" ~/.zshrc # Add backup file for Mac compatability, will be removed in cleanup
 
 # Clean up
 echo "Cleaning up..."
 echo
-cd .. && rm -rf ./zsh-setup 
+cd .. && rm -rf ./ohmyzsh-nj-setup && rm -rf ~/.zshrc.bk-tmp
 
 echo "Success! Reboot terminal to configure powerlevel10k."
 echo
