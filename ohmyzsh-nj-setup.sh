@@ -94,8 +94,8 @@ cd ./ohmyzsh-nj-setup
 read -p "Do you already have Oh My Zsh installed? [y|$(tput bold)N$(tput sgr0)]: " installOhMyZsh
 echo
 if [[ -z "$installOhMyZsh" ]] \
-|| [[ "$installOhMyZsh" = "Y" ]] \
-|| [[ "$installOhMyZsh" = "y" ]] \
+|| [[ "$installOhMyZsh" = "N" ]] \
+|| [[ "$installOhMyZsh" = "n" ]] \
 ;
 then
     # Get and Run the ohmyzsh install.sh (passing variable to make it not launch when ran)
