@@ -28,31 +28,11 @@ function checkMacOrLinux {
         || [[ "$1" = "M" ]] \
     ;
     then
-        macWarningMessage
         doubleConfirmOs "mac"
         echo -n "Mac Chosen. "
         fontsDir=~/Library/Fonts/meslo # Set $fontsDir variable based on the OS
     else
         echo "Invalid choice. Exiting."
-        exit 1
-    fi
-}
-
-function macWarningMessage {
-    macMsg="Note: I have not fully tested the Mac version of this script, and will do so once I need to"
-    macMsg="$macMsg reinstall Oh My Zsh onto a Mac. Do you wish to continue (and test this for me!?) [$(tput bold)Y$(tput sgr0)|n]: "
-    read -p "$macMsg" macContinueWarning
-    if [[ -z "$macContinueWarning" ]] \
-    || [[ "$macContinueWarning" = "Y" ]] \
-    || [[ "$macContinueWarning" = "y" ]] \
-    ;
-    then
-        echo
-        echo "Good Luck!"
-        echo
-    else
-        echo
-        echo "Exiting... Feel free to come back once it's been tested!"
         exit 1
     fi
 }
