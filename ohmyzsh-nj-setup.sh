@@ -91,7 +91,7 @@ fi
 # Getting recommended fonts
 echo "Downloading recommended fonts..."
 echo
-curl --remote-name-all https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20{Regular,Italic,Bold,Bold%20Italic}.ttf
+curl --remote-name-all -L https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20{Regular,Italic,Bold,Bold%20Italic}.ttf
 
 # Installing fonts (by moving them into fonts directory)
 echo "Installing fonts..."
