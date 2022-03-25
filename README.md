@@ -22,8 +22,8 @@ bash ./ohmyzsh-nj-setup.sh
 
 ## Compatibility
 
-- This script work on any Linux distro, but the font directory may need updating if (for whatever reason) that distro does not store user fonts in `~/.local/share/fonts`
-- This script should also work on Mac (Untested currently)
+- This script works on any Linux distro, but the font directory may need updating if (for whatever reason) that distro does not store user fonts in `~/.local/share/fonts`
+- This script also works on Mac.
 - `git` is required for this to work (and `curl`, but this is a dependency of `git`).
 
 ## Future Plans
