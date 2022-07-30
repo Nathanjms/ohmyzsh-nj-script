@@ -135,4 +135,4 @@ cd .. && rm -rf ./ohmyzsh-nj-setup && rm -rf ~/.zshrc.bk-tmp
 
 echo "Success! Reboot terminal to configure powerlevel10k."
 echo
-echo "Note: You will have to manually update your terminal's font to use the MesloLGS for power level 10k to look render correctly."
+echo "Note: You will have to manually update your terminal's font to MesloLGS for power level 10k to look correct."
