@@ -123,6 +123,12 @@ echo
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 additionalPlugins="${additionalPlugins} zsh-syntax-highlighting"
 
+# Get zsh-z
+echo "Getting zsh-z"
+echo
+git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+additionalPlugins="${additionalPlugins} zsh-z"
+
 # Find plugins section and update
 echo "Adding plugins to ~/.zshrc"
 echo
