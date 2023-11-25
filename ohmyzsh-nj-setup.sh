@@ -11,6 +11,13 @@ then
     exit 1
 fi
 
+#Check that zsh is installed
+if ! command -v zsh &> /dev/null
+then
+    echo "zsh is not installed, please install it first before proceeding."
+    exit 1
+fi
+
 function checkMacOrLinux {
     if [[ -z "$1" ]] \
     || [[ "$1" = "Linux" ]] \
